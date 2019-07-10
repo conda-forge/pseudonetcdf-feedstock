@@ -1,25 +1,21 @@
-{% set name = "pseudonetcdf" %}
 {% set version = "3.0.2" %}
-{% set sha256 = "6e26cb968c74b8ac03d3ee136fe7a24f8546f6ba5e62a204679b4fd9ad1a2d6d" %}
 
 package:
-  name: {{ name|lower }}
+  name: pseudonetcdf
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: http://github.com/barronh/pseudonetcdf/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 6e26cb968c74b8ac03d3ee136fe7a24f8546f6ba5e62a204679b4fd9ad1a2d6d
 
 build:
-  noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
-    - setuptools
     - pip
   run:
     - python
