@@ -1,4 +1,4 @@
-{% set version = "3.0.2" %}
+{% set version = "3.1.0" %}
 
 package:
   name: pseudonetcdf
@@ -6,7 +6,7 @@ package:
 
 source:
   url: http://github.com/barronh/pseudonetcdf/archive/v{{ version }}.tar.gz
-  sha256: 6e26cb968c74b8ac03d3ee136fe7a24f8546f6ba5e62a204679b4fd9ad1a2d6d
+  sha256: a48c954f9b45e51734fac223184586922e661e518133acadf9cd529c26c5f624
 
 build:
   number: 0
