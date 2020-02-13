@@ -9,7 +9,7 @@ source:
   sha256: a48c954f9b45e51734fac223184586922e661e518133acadf9cd529c26c5f624
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -24,7 +24,7 @@ requirements:
     - netcdf4
     - scipy
     - pyyaml
-    - matplotlib
+    - matplotlib-base
 
 test:
   imports:
