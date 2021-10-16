@@ -1,4 +1,4 @@
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: pseudonetcdf
@@ -6,15 +6,15 @@ package:
 
 source:
   url: http://github.com/barronh/pseudonetcdf/archive/v{{ version }}.tar.gz
-  sha256: a48c954f9b45e51734fac223184586922e661e518133acadf9cd529c26c5f624
+  sha256: a783def7f4ae819f6184b604bd85c0f7e674a633f7a252d3b4e1ff52f45b8a48
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python >=3
     - pip
   run:
@@ -36,7 +36,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE
-  summary: 'PseudoNetCDF like NetCDF except for many scientific format backends'
+  summary: PseudoNetCDF like NetCDF except for many scientific format backends
   doc_url: http://pseudonetcdf.readthedocs.io/
   dev_url: http://github.com/barronh/pseudonetcdf
 
