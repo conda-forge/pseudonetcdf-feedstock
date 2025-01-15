@@ -9,16 +9,16 @@ source:
   sha256: e0ebfbedd96117a132e96c7a8feabb3768d15c1b3bbd42185ac46971d73285aa
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - numpy
     - pandas
     - netcdf4
@@ -27,6 +27,8 @@ requirements:
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - PseudoNetCDF
     - PseudoNetCDF.test
