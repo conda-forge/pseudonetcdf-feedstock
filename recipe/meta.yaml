@@ -15,10 +15,11 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - numpy
     - pandas
     - netcdf4
@@ -27,13 +28,15 @@ requirements:
     - matplotlib-base
 
 test:
+  requires:
+  - python {{ python_min }}
   imports:
     - PseudoNetCDF
     - PseudoNetCDF.test
 
 about:
   home: http://github.com/barronh/pseudonetcdf
-  license: GPL-3.0
+  license: LGPL-3.0-only
   license_family: GPL
   license_file: LICENSE
   summary: PseudoNetCDF like NetCDF except for many scientific format backends
